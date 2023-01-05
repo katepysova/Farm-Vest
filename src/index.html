@@ -14,16 +14,52 @@
   </head>
 
   <body>
-    <div class="container container--large">
-      <h1>Theme switcher</h1>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container container container--large">
+          <a class="header__logo" href="#"> FarmVest </a>
 
-      <label class="theme-switcher">
-        <input class="theme-switcher__input" type="checkbox" />
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#"> Home </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#"> About </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#"> Features </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#"> How it works? </a>
+              </li>
+            </ul>
+          </nav>
 
-        <span class="theme-switcher__toggler"></span>
-      </label>
+          <div class="header__buttons">
+            <label class="theme-switcher">
+              <input class="theme-switcher__input" type="checkbox" />
+              <span class="theme-switcher__toggler"></span>
+            </label>
+
+            <a href="#" class="btn btn--secondary">Sign in</a>
+            <a href="#" class="btn btn--primary">Get started</a>
+          </div>
+        </div>
+      </header>
+
+      <main style="padding-top: 200px">
+        <div class="container container--small">
+          <button class="btn btn--primary">Sign in</button>
+          <a href="#" class="btn btn--secondary">Sign in</a>
+
+          <button class="btn btn--primary">Get started</button>
+          <a href="#" class="btn btn--secondary">Get started</a>
+        </div>
+      </main>
+
+      <footer>Footer</footer>
     </div>
-
     <script src="./js/script.js"></script>
   </body>
 </html>

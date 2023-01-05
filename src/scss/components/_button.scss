@@ -1,0 +1,68 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-family: $font-lato;
+    font-size: rem(18px);
+    font-weight: 500;
+    line-height: rem(20px);
+    letter-spacing: 0;
+    text-align: center;
+    padding: rem(20px) rem(44px);
+    border-radius: rem(10px);
+    border-width: rem(1px);
+    border-style: solid;
+    transition: 0.4s;
+  }
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-green-night;
+    border-color: $color-green-night;
+
+    &:hover,
+    &:active {
+      background-color: m-lighten($color-green-night, 10%);
+      border-color: m-lighten($color-green-night, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-transparent;
+    border-color: $color-white;
+
+    &:hover,
+    &:active {
+      background-color: rgba($color-white, 0.15);
+    }
+  }
+}
+
+.light-mode {
+  .btn {
+    &--primary {
+      background-color: $color-green-day;
+      border-color: $color-green-day;
+
+      &:hover,
+      &:active {
+        background-color: m-darken($color-green-day, 10%);
+        border-color: m-darken($color-green-day, 10%);
+      }
+    }
+
+    &--secondary {
+      border-color: inherit;
+
+      &:hover,
+      &:active {
+        background-color: rgba($color-black, 0.15);
+      }
+    }
+  }
+}
