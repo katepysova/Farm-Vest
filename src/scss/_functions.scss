@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$html-font-size: 16px;
+@import "./variables";
 
 @function strip-units($value) {
   @return math.div($value, ($value * 0 + 1));
