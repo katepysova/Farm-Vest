@@ -12,6 +12,7 @@ $bp-header-collapse: 1100px;
   z-index: 999;
   width: 100%;
   height: $header-height-desktop;
+  transition: 0.4s;
 
   &__container {
     height: 100%;
@@ -27,7 +28,7 @@ $bp-header-collapse: 1100px;
     font-weight: 500;
     line-height: rem(43px);
     letter-spacing: 0;
-    z-index: 1000;
+    z-index: 998;
   }
 
   &__buttons {
@@ -171,6 +172,12 @@ $bp-header-collapse: 1100px;
 .light-mode {
   .header {
     background-color: rgba($color-white, 0.9);
+
+    &.collapsed {
+      @media only screen and (max-width: $bp-header-collapse) {
+        background-color: rgba($color-green-day, 0.9);
+      }
+    }
   }
 
   .menu-btn__icon {
@@ -196,6 +203,8 @@ $bp-header-collapse: 1100px;
 
 @media only screen and (max-width: $bp-header-collapse) {
   .header.collapsed {
+    background-color: m-darken($color-green-night,60%);
+
     .menu-btn {
       &__icon {
         background-color: transparent;
