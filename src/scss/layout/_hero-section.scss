@@ -1,0 +1,17 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+.hero {
+  &__title {
+    margin: 0 auto rem(69px);
+    width: 100%;
+    max-width: m-percentage(800px, 1420px);
+  }
+
+  &__text {
+    margin: 0 auto rem(48px);
+    width: 100%;
+    max-width: m-percentage(725px, 1420px);
+  }
+}

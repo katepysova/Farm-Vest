@@ -203,7 +203,7 @@ $bp-header-collapse: 1100px;
 
 @media only screen and (max-width: $bp-header-collapse) {
   .header.collapsed {
-    background-color: m-darken($color-green-night,60%);
+    background-color: m-darken($color-green-night, 60%);
 
     .menu-btn {
       &__icon {

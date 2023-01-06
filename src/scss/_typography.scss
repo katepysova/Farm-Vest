@@ -1,0 +1,29 @@
+@import "./variables";
+@import "./functions";
+@import "./mixins";
+
+.heading-primary {
+  font-size: rem(70px);
+  font-weight: 700;
+  line-height: rem(78px);
+  letter-spacing: 0;
+  text-align: center;
+
+  .font-green {
+    color: $color-green-night;
+  }
+}
+
+.paragraph {
+  font-size: rem(18px);
+  font-weight: 400;
+  line-height: rem(32px);
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.light-mode {
+  .font-green {
+    color: $color-green-day;
+  }
+}
