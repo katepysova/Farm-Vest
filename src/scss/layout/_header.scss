@@ -3,7 +3,7 @@
 @import "../functions";
 
 .header {
-  background-color: rgba($color-black, 0.9);
+  background-color: rgba($color-black, 0.95);
   position: fixed;
   left: 0;
   top: 0;
@@ -169,7 +169,7 @@
 
 .light-mode {
   .header {
-    background-color: rgba($color-white, 0.9);
+    background-color: rgba($color-white, 0.95);
 
     &.collapsed {
       @media only screen and (max-width: $bp-header-collapse) {
