@@ -23,6 +23,10 @@ $color-error-red: #e10837;
     background-color: $color-transparent;
     padding: rem(20px) rem(25px);
 
+    @media only screen and (max-width: $bp-extra-small) {
+      border-bottom: rem(1px) solid currentcolor;
+    }
+
     &,
     &::placeholder {
       font-family: $font-spartan;
@@ -51,6 +55,12 @@ $color-error-red: #e10837;
 
   &__field.error .form__field-error {
     display: block;
+  }
+
+  @media only screen and (max-width: $bp-extra-small) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: rem(36px);
   }
 }
 

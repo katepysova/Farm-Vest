@@ -10,10 +10,13 @@
 
   &__container {
     padding-top: $header-height-desktop;
-    padding-bottom: rem(84px);
 
-    @media only screen and (max-width: $bp-header-collapse) {
-      padding-top: $header-height-mobile;
+    @media only screen and (max-width: $bp-extra-medium) {
+      padding-top: calc(#{$header-height-mobile} + 84px);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      padding-bottom: rem(84px);
     }
   }
 
@@ -21,12 +24,50 @@
     margin: 0 auto rem(69px);
     width: 100%;
     max-width: m-percentage(923px, 1420px);
+
+    @media only screen and (max-width: $bp-large) {
+      max-width: 90%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      max-width: 100%;
+    }
   }
 
   &__text {
     margin: 0 auto rem(48px);
     width: 100%;
     max-width: m-percentage(725px, 1420px);
+
+    @media only screen and (max-width: $bp-extra-medium) {
+      max-width: 80%;
+    }
+
+    @media only screen and (max-width: $bp-medium-small) {
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: m-percentage(533px, 1420px);
+
+    @media only screen and (max-width: $bp-medium) {
+      max-width: 60%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      max-width: 65%;
+    }
+
+    @media only screen and (max-width: $bp-medium-small) {
+      max-width: 80%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      max-width: 100%;
+    }
   }
 
   @media only screen and (max-width: $bp-medium) {

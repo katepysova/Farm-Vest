@@ -3,7 +3,7 @@
 @import "./mixins";
 
 .heading-primary {
-  font-size: rem(70px);
+  font-size: rem(64px);
   font-weight: 700;
   line-height: rem(78px);
   letter-spacing: 0;
@@ -11,6 +11,17 @@
 
   .font-green {
     color: $color-green-night;
+  }
+
+  @media only screen and (max-width: $bp-medium-small) {
+    font-size: rem(56px);
+    line-height: rem(64px);
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: rem(36px);
+    font-weight: 500;
+    line-height: rem(48px);
   }
 }
 
