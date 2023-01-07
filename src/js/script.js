@@ -1,3 +1,5 @@
+import { checkEmail } from "./formValidation.js";
+
 const themeSwitchBtn = document.querySelector(".theme-switcher");
 
 themeSwitchBtn.addEventListener("change", () => {
@@ -14,4 +16,18 @@ window.addEventListener("resize", () => {
   if (header.classList.contains("collapsed")) {
     header.classList.toggle("collapsed");
   }
+});
+
+const forms = document.querySelectorAll(".form");
+forms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = form.querySelector(".form__input--email");
+    const isEmailValid = checkEmail(email);
+    const isFormValid = isEmailValid;
+
+    if (isFormValid) {
+      /* submit to the server */
+    }
+  });
 });

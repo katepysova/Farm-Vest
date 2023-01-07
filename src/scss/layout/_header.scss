@@ -2,8 +2,6 @@
 @import "../mixins";
 @import "../functions";
 
-$bp-header-collapse: 1100px;
-
 .header {
   background-color: rgba($color-black, 0.9);
   position: fixed;

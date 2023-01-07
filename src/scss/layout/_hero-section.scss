@@ -3,15 +3,33 @@
 @import "../functions";
 
 .hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__container {
+    padding-top: $header-height-desktop;
+    padding-bottom: rem(84px);
+
+    @media only screen and (max-width: $bp-header-collapse) {
+      padding-top: $header-height-mobile;
+    }
+  }
+
   &__title {
     margin: 0 auto rem(69px);
     width: 100%;
-    max-width: m-percentage(800px, 1420px);
+    max-width: m-percentage(923px, 1420px);
   }
 
   &__text {
     margin: 0 auto rem(48px);
     width: 100%;
     max-width: m-percentage(725px, 1420px);
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    height: auto;
   }
 }

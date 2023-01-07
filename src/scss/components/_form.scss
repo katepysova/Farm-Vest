@@ -1,0 +1,61 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+$color-error-red: #e10837;
+
+.form {
+  background-color: $color-white;
+  padding: rem(6px);
+  border-radius: rem(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__field {
+    position: relative;
+    flex: 1;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    background-color: $color-transparent;
+    padding: rem(20px) rem(25px);
+
+    &,
+    &::placeholder {
+      font-family: $font-spartan;
+      font-size: rem(18px);
+      font-weight: 500;
+      line-height: rem(20px);
+      letter-spacing: 0;
+      color: $color-black;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__field-error {
+    display: none;
+    position: absolute;
+    left: rem(24px);
+    bottom: rem(-28px);
+    font-size: rem(18px);
+    font-style: italic;
+    font-weight: 500;
+    color: $color-error-red;
+  }
+
+  &__field.error .form__field-error {
+    display: block;
+  }
+}
+
+.light-mode {
+  .form {
+    background-color: rgba($color-black, 0.1);
+  }
+}
