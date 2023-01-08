@@ -31,3 +31,18 @@ forms.forEach((form) => {
     }
   });
 });
+
+document.addEventListener("mousemove", (event) => {
+  const parallaxIcons = document.querySelectorAll(".parallax-icon");
+  const movementConstant = 0.025;
+
+  const valueX = event.pageX * movementConstant;
+  const valueY = event.pageX * movementConstant;
+
+  parallaxIcons.forEach((icon) => {
+    icon.setAttribute(
+      "style",
+      `transform: translate(${valueX}px, ${valueY}px);`
+    );
+  });
+});

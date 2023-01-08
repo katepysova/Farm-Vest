@@ -57,6 +57,12 @@
     }
   }
 
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
   &__title {
     margin: 0 auto rem(69px);
     width: 100%;
@@ -107,6 +113,55 @@
     }
   }
 
+  &__icons {
+    pointer-events: none;
+    color: $color-white;
+  }
+
+  &__icon {
+    position: absolute;
+
+    &--1 {
+      bottom: 25%;
+      left: 0;
+    }
+
+    &--2 {
+      left: 15%;
+      top: 27%;
+    }
+
+    &--3 {
+      bottom: 15%;
+      left: 24%;
+    }
+
+    &--4 {
+      top: -5%;
+      right: 26%;
+    }
+
+    &--5 {
+      right: 17%;
+      top: 26%;
+    }
+
+    &--6 {
+      right: 15%;
+      bottom: 14%;
+    }
+
+    &--7 {
+      right: 0;
+      top: 40%;
+    }
+
+    svg {
+      width: rem(26px);
+      height: rem(36px);
+    }
+  }
+
   @media only screen and (max-width: $bp-medium) {
     height: auto;
   }
@@ -117,6 +172,10 @@
     &::before,
     &::after {
       border-color: $color-green-day;
+    }
+
+    &__icons {
+      color: rgba($color-black, 0.4);
     }
   }
 }
