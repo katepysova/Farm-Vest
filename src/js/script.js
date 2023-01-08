@@ -32,17 +32,31 @@ forms.forEach((form) => {
   });
 });
 
-document.addEventListener("mousemove", (event) => {
-  const parallaxIcons = document.querySelectorAll(".parallax-icon");
-  const movementConstant = 0.025;
+let currentX = "";
+let currentY = "";
 
-  const valueX = event.pageX * movementConstant;
-  const valueY = event.pageX * movementConstant;
+document.addEventListener("mousemove", (event) => {
+  const movementConstant = 1;
+  const parallaxIcons = document.querySelectorAll(".parallax-icon");
+
+  if (currentX === "") {
+    currentX = event.pageX;
+  }
+
+  if (currentY === "") {
+    currentY = event.pageX;
+  }
+
+  const diffX = currentX - event.pageX;
+  const diffY = currentY - event.pageY;
+
+  currentX = event.pageX;
+  currentY = event.pageY;
 
   parallaxIcons.forEach((icon) => {
-    icon.setAttribute(
-      "style",
-      `transform: translate(${valueX}px, ${valueY}px);`
-    );
+    const moveX = diffX * movementConstant;
+    const moveY = diffY * movementConstant;
+
+    icon.setAttribute("style", `transform: translate(${moveX}px, ${moveY}px);`);
   });
 });

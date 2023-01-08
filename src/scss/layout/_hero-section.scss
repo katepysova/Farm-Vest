@@ -120,6 +120,7 @@
 
   &__icon {
     position: absolute;
+    transition: transform 0.2s;
 
     &--1 {
       bottom: 25%;
