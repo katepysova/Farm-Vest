@@ -36,7 +36,7 @@ let currentX = "";
 let currentY = "";
 
 document.addEventListener("mousemove", (event) => {
-  const movementConstant = 1;
+  const movementConstant = 1.1;
   const parallaxIcons = document.querySelectorAll(".parallax-icon");
 
   if (currentX === "") {
@@ -44,7 +44,7 @@ document.addEventListener("mousemove", (event) => {
   }
 
   if (currentY === "") {
-    currentY = event.pageX;
+    currentY = event.pageY;
   }
 
   const diffX = currentX - event.pageX;
