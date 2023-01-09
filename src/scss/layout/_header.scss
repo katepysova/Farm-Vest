@@ -3,7 +3,7 @@
 @import "../functions";
 
 .header {
-  background-color: rgba($color-black, 0.95);
+  background-color: $color-transparent;
   position: fixed;
   left: 0;
   top: 0;
@@ -11,6 +11,10 @@
   width: 100%;
   height: $header-height-desktop;
   transition: 0.4s;
+
+  &.scrolled {
+    background-color: rgba($color-black, 0.95);
+  }
 
   &__container {
     height: 100%;
@@ -169,7 +173,9 @@
 
 .light-mode {
   .header {
-    background-color: rgba($color-white, 0.95);
+    &.scrolled {
+      background-color: rgba($color-white, 0.95);
+    }
 
     &.collapsed {
       @media only screen and (max-width: $bp-header-collapse) {

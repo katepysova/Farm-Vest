@@ -18,6 +18,14 @@ window.addEventListener("resize", () => {
   }
 });
 
+window.addEventListener("scroll", () => {
+  if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
 const forms = document.querySelectorAll(".form");
 forms.forEach((form) => {
   form.addEventListener("submit", (event) => {

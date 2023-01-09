@@ -116,6 +116,10 @@
   &__icons {
     pointer-events: none;
     color: $color-white;
+
+    @media only screen and (max-width: $bp-medium-small) {
+      display: none;
+    }
   }
 
   &__icon {
