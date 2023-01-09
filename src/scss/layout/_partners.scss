@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+.partners {
+  &__container {
+    padding-top: rem(86px);
+    padding-bottom: rem(86px);
+    display: flex;
+    gap: rem(36px);
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: space-evenly;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: space-evenly;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      gap: rem(24px);
+    }
+  }
+
+  &__logo {
+    color: rgba($color-white, 0.5);
+  }
+}
