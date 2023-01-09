@@ -6,25 +6,30 @@
   &__container {
     padding-top: rem(86px);
     padding-bottom: rem(86px);
-    display: flex;
-    gap: rem(36px);
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    gap: rem(108px);
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+
+    @media only screen and (max-width: $bp-large) {
+        gap: rem(54px);
+      }
 
     @media only screen and (max-width: $bp-medium) {
-      justify-content: space-evenly;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
-      justify-content: space-evenly;
+        gap: rem(36px);
     }
 
     @media only screen and (max-width: $bp-small) {
-      gap: rem(24px);
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media only screen and (max-width: $bp-extra-small) {
+        grid-template-columns: repeat(2, 1fr);
     }
   }
 
   &__logo {
+    width: 100%;
     color: rgba($color-white, 0.5);
   }
 }

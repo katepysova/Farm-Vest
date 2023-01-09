@@ -1,10 +1,48 @@
 import { checkEmail } from "./formValidation.js";
+import LocalStorage from "./localStorage.js";
 
-const themeSwitchBtn = document.querySelector(".theme-switcher");
+const themeSwitchBtn = document.querySelector(".theme-switcher__input");
 
-themeSwitchBtn.addEventListener("change", () => {
+const themeKey = "theme";
+
+themeSwitchBtn.addEventListener("click", () => {
+  const partnerLogos = document.querySelectorAll(".partners__logo");
+  const lightImagesFolderName = "light";
+  const darkImagesFolderName = "dark";
+
   document.body.classList.toggle("light-mode");
+
+  const isLightMode = document.body.classList.contains("light-mode");
+
+  if (isLightMode) {
+    LocalStorage.setItem(themeKey, "light-mode");
+  } else {
+    LocalStorage.setItem(themeKey, "dark-mode");
+  }
+
+  partnerLogos.forEach((logo) => {
+    if (isLightMode) {
+      logo.setAttribute(
+        "src",
+        logo
+          .getAttribute("src")
+          .replace(darkImagesFolderName, lightImagesFolderName)
+      );
+    } else {
+      logo.setAttribute(
+        "src",
+        logo
+          .getAttribute("src")
+          .replace(lightImagesFolderName, darkImagesFolderName)
+      );
+    }
+  });
 });
+
+const currentTheme = LocalStorage.getItem(themeKey);
+if (currentTheme === "light-mode") {
+  themeSwitchBtn.click();
+}
 
 const headerCollapseBtn = document.querySelector(".menu-btn");
 const header = document.querySelector(".header");
