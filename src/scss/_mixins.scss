@@ -15,12 +15,3 @@
     min-width: 0;
   }
 }
-
-@mixin paragraph($color: $color-black) {
-  font-family: $font-inter;
-  font-size: rem(16px);
-  font-weight: 400;
-  line-height: rem(32px);
-  letter-spacing: rem(0);
-  color: $color;
-}

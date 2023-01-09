@@ -12,19 +12,19 @@
     align-items: center;
 
     @media only screen and (max-width: $bp-large) {
-        gap: rem(54px);
-      }
+      gap: rem(54px);
+    }
 
     @media only screen and (max-width: $bp-medium) {
-        gap: rem(36px);
+      gap: rem(36px);
     }
 
     @media only screen and (max-width: $bp-small) {
-        grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media only screen and (max-width: $bp-extra-small) {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
