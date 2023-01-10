@@ -6,6 +6,19 @@
   &__container {
     padding-top: rem(110px);
     padding-bottom: rem(100px);
+    display: grid;
+    grid-template-columns: 0.434fr 0.566fr;
+    column-gap: rem(96px);
+
+    @media only screen and (max-width: $bp-extra-medium) {
+      grid-template-columns: 1fr;
+      row-gap: rem(64px);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding-top: rem(48px);
+      padding-bottom: rem(48px);
+    }
   }
 
   &__title {
@@ -20,6 +33,10 @@
     display: flex;
     flex-direction: column;
     gap: rem(48px);
+
+    @media only screen and (max-width: $bp-medium) {
+      gap: rem(36px);
+    }
   }
 
   &__item {
@@ -36,10 +53,20 @@
       justify-content: center;
       background-color: rgba($color-green-day, 0.1);
 
+      @media only screen and (max-width: $bp-medium) {
+        width: rem(64px);
+        height: rem(64px);
+      }
+
       svg {
         color: $color-green-night;
         width: rem(56px);
         height: rem(56px);
+
+        @media only screen and (max-width: $bp-medium) {
+          width: rem(24px);
+          height: rem(24px);
+        }
       }
     }
 
@@ -52,6 +79,10 @@
         line-height: rem(22px);
         letter-spacing: 0;
         margin-bottom: rem(16px);
+
+        @media only screen and (max-width: $bp-medium) {
+          margin-bottom: rem(12px);
+        }
       }
 
       p {
@@ -64,12 +95,94 @@
       }
     }
   }
+
+  &__image-block {
+    position: relative;
+    background-color: rgba($color-white, 0.1);
+    padding: rem(116px) rem(45px);
+    border-radius: rem(20px);
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      @include circles;
+
+      z-index: -1;
+    }
+
+    &::before {
+      top: -15%;
+      left: 65%;
+    }
+
+    &::after {
+      top: -5%;
+      left: 70%;
+    }
+
+    @media only screen and (max-width: $bp-extra-medium) {
+      grid-row: 1 / 2;
+      padding: rem(90px) rem(45px);
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    @media only screen and (max-width: $bp-medium-small) {
+      padding: rem(0);
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: rem(20px);
+
+    @media only screen and (max-width: $bp-large) {
+      padding-bottom: 50%;
+    }
+
+    @media only screen and (max-width: $bp-extra-medium) {
+      padding-bottom: 65%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      padding-bottom: 80%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: top;
+      border-radius: rem(20px);
+      transition: all 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 }
 
 .light-mode {
   .how {
     &__item-icon {
       color: $color-green-day;
+    }
+
+    &__image-block {
+      background-color: rgba($color-green-day, 0.1);
+
+      &::before,
+      &::after {
+        border-color: $color-green-day;
+      }
     }
   }
 }

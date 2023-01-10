@@ -12,27 +12,7 @@
 
   &::before,
   &::after {
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    display: inline-block;
-    top: rem(0);
-    left: rem(0);
-    width: rem(585px);
-    height: rem(585px);
-    border: rem(1px) solid currentcolor;
-    border-radius: 50%;
-    z-index: 3;
-
-    @media only screen and (max-width: $bp-medium) {
-      width: rem(320px);
-      height: rem(320px);
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      width: rem(200px);
-      height: rem(200px);
-    }
+    @include circles;
   }
 
   &::before {
@@ -54,6 +34,10 @@
 
     @media only screen and (max-width: $bp-medium) {
       padding-bottom: rem(84px);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding-bottom: rem(48px);
     }
   }
 

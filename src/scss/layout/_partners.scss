@@ -21,6 +21,8 @@
 
     @media only screen and (max-width: $bp-small) {
       grid-template-columns: repeat(4, 1fr);
+      padding-top: rem(48px);
+      padding-bottom: rem(48px);
     }
 
     @media only screen and (max-width: $bp-extra-small) {
