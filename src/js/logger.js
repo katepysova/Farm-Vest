@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV === "development";
+import { isDev } from "./constants.js";
 
 export default class Logger {
   static log(message) {

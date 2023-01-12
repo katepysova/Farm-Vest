@@ -1,26 +1,17 @@
 import { checkEmail } from "./formValidation.js";
 import { parallaxWindowScroll, parallaxMouseMove } from "./parallax.js";
+import { headerScroll, headerCollapse } from "./header.js";
+import { themeMode } from "./constants.js";
 import LocalStorage from "./localStorage.js";
+import themeSwitch from "./themeSwitcher.js";
 
 const themeSwitchBtn = document.querySelector(".theme-switcher__input");
 
-const themeKey = "theme";
-
 themeSwitchBtn.addEventListener("click", () => {
-  const partnerLogos = document.querySelectorAll(".partners__logo");
-  const lightImagesFolderName = "light";
+  const isLightMode = themeSwitch();
   const darkImagesFolderName = "dark";
-
-  document.body.classList.toggle("light-mode");
-
-  const isLightMode = document.body.classList.contains("light-mode");
-
-  if (isLightMode) {
-    LocalStorage.setItem(themeKey, "light-mode");
-  } else {
-    LocalStorage.setItem(themeKey, "dark-mode");
-  }
-
+  const lightImagesFolderName = "light";
+  const partnerLogos = document.querySelectorAll(".partners__logo");
   partnerLogos.forEach((logo) => {
     if (isLightMode) {
       logo.setAttribute(
@@ -40,7 +31,7 @@ themeSwitchBtn.addEventListener("click", () => {
   });
 });
 
-const currentTheme = LocalStorage.getItem(themeKey);
+const currentTheme = LocalStorage.getItem(themeMode);
 if (currentTheme === "light-mode") {
   themeSwitchBtn.click();
 }
@@ -52,23 +43,15 @@ headerCollapseBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", () => {
-  if (header.classList.contains("collapsed")) {
-    header.classList.toggle("collapsed");
-  }
+  headerCollapse(header);
 });
-
-const headerScroll = () => {
-  if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-};
 
 window.addEventListener("scroll", () => {
   parallaxWindowScroll();
-  headerScroll();
+  headerScroll(header);
 });
+
+window.addEventListener("mousemove", parallaxMouseMove);
 
 const forms = document.querySelectorAll(".form");
 forms.forEach((form) => {
@@ -83,8 +66,6 @@ forms.forEach((form) => {
     }
   });
 });
-
-window.addEventListener("mousemove", parallaxMouseMove);
 
 const spoilers = document.querySelectorAll(".spoiler");
 
