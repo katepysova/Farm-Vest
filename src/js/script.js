@@ -106,3 +106,12 @@ document.addEventListener("mousemove", (event) => {
     icon.setAttribute("style", `transform: translate(${moveX}px, ${moveY}px);`);
   });
 });
+
+const spoilers = document.querySelectorAll(".spoiler");
+
+spoilers.forEach((spoiler) => {
+  const spoilerBtn = spoiler.querySelector(".spoiler__btn");
+  spoilerBtn.addEventListener("click", () => {
+    spoiler.classList.toggle("opened");
+  });
+});
