@@ -47,11 +47,13 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("scroll", () => {
-  parallaxWindowScroll();
+  parallaxWindowScroll(".parallax-item");
   headerScroll(header);
 });
 
-window.addEventListener("mousemove", parallaxMouseMove);
+window.addEventListener("mousemove", (event) =>
+  parallaxMouseMove(event, ".parallax-item")
+);
 
 const forms = document.querySelectorAll(".form");
 forms.forEach((form) => {

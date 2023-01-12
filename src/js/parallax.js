@@ -1,10 +1,10 @@
-export const parallaxWindowScroll = () => {
+export const parallaxWindowScroll = (selector, movementConstant = 5) => {
   const scrollPosition = document.documentElement.scrollTop;
-  const scrollingItems = document.querySelectorAll(".parallax-item");
+  const scrollingItems = document.querySelectorAll(selector);
   scrollingItems.forEach((item) => {
     item.setAttribute(
       "style",
-      `transform: translate(0, ${scrollPosition / 5}px)`
+      `transform: translate(0, ${scrollPosition / movementConstant}px)`
     );
   });
 };
@@ -12,9 +12,8 @@ export const parallaxWindowScroll = () => {
 let x = "";
 let y = "";
 
-export const parallaxMouseMove = (event) => {
-  const movementConstant = 1.1;
-  const parallaxIcons = document.querySelectorAll(".parallax-item");
+export const parallaxMouseMove = (event, selector, movementConstant = 1.1) => {
+  const parallaxIcons = document.querySelectorAll(selector);
 
   if (x === "") {
     x = event.pageX;
