@@ -1,4 +1,5 @@
 import { checkEmail } from "./formValidation.js";
+import { parallaxWindowScroll, parallaxMouseMove } from "./parallax.js";
 import LocalStorage from "./localStorage.js";
 
 const themeSwitchBtn = document.querySelector(".theme-switcher__input");
@@ -56,12 +57,17 @@ window.addEventListener("resize", () => {
   }
 });
 
-window.addEventListener("scroll", () => {
+const headerScroll = () => {
   if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
+};
+
+window.addEventListener("scroll", () => {
+  parallaxWindowScroll();
+  headerScroll();
 });
 
 const forms = document.querySelectorAll(".form");
@@ -78,34 +84,7 @@ forms.forEach((form) => {
   });
 });
 
-let currentX = "";
-let currentY = "";
-
-document.addEventListener("mousemove", (event) => {
-  const movementConstant = 1.1;
-  const parallaxIcons = document.querySelectorAll(".parallax-icon");
-
-  if (currentX === "") {
-    currentX = event.pageX;
-  }
-
-  if (currentY === "") {
-    currentY = event.pageY;
-  }
-
-  const diffX = currentX - event.pageX;
-  const diffY = currentY - event.pageY;
-
-  currentX = event.pageX;
-  currentY = event.pageY;
-
-  parallaxIcons.forEach((icon) => {
-    const moveX = diffX * movementConstant;
-    const moveY = diffY * movementConstant;
-
-    icon.setAttribute("style", `transform: translate(${moveX}px, ${moveY}px);`);
-  });
-});
+window.addEventListener("mousemove", parallaxMouseMove);
 
 const spoilers = document.querySelectorAll(".spoiler");
 
