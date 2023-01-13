@@ -5,11 +5,11 @@
 .download {
   &__container {
     padding-top: rem(100px);
-    padding-bottom: rem(100px);
+    padding-bottom: rem(200px);
 
     @media only screen and (max-width: $bp-small) {
       padding-top: rem(48px);
-      padding-bottom: rem(48px);
+      padding-bottom: rem(96px);
     }
   }
 

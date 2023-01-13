@@ -11,8 +11,8 @@ themeSwitchBtn.addEventListener("click", () => {
   const isLightMode = themeSwitch();
   const darkImagesFolderName = "dark";
   const lightImagesFolderName = "light";
-  const partnerLogos = document.querySelectorAll(".partners__logo");
-  partnerLogos.forEach((logo) => {
+  const colorChangedImages = document.querySelectorAll(".img-color-change");
+  colorChangedImages.forEach((logo) => {
     if (isLightMode) {
       logo.setAttribute(
         "src",
@@ -77,3 +77,7 @@ spoilers.forEach((spoiler) => {
     spoiler.classList.toggle("opened");
   });
 });
+
+const year = document.querySelector(".copyright__year");
+const date = new Date();
+year.textContent = date.getFullYear();
