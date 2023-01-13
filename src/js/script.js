@@ -81,3 +81,26 @@ spoilers.forEach((spoiler) => {
 const year = document.querySelector(".copyright__year");
 const date = new Date();
 year.textContent = date.getFullYear();
+
+const navLinks = document.querySelectorAll(".nav__link");
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const href = link.getAttribute("href");
+    if (href === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else if (href !== "#" && href.startsWith("#")) {
+      const target = document.querySelector(href);
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+
+    if (header.classList.contains("collapsed")) {
+      header.classList.remove("collapsed");
+    }
+  });
+});

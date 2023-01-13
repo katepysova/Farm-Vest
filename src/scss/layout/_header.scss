@@ -23,14 +23,17 @@
     justify-content: space-between;
   }
 
-  &__logo {
-    position: relative;
-    font-family: $font-lato;
-    font-size: rem(36px);
-    font-weight: 500;
-    line-height: rem(43px);
-    letter-spacing: 0;
-    z-index: 998;
+  &__logo.nav__link {
+    &:link,
+    &:visited {
+      position: relative;
+      font-family: $font-lato;
+      font-size: rem(36px);
+      font-weight: 500;
+      line-height: rem(43px);
+      letter-spacing: 0;
+      z-index: 998;
+    }
   }
 
   &__buttons {
@@ -79,7 +82,7 @@
     }
   }
 
-  &__link {
+  &__link-link {
     &:link,
     &:visited {
       display: block;
@@ -198,7 +201,7 @@
     }
   }
 
-  .nav__link {
+  .nav__link-link {
     &::after {
       background-color: $color-black;
     }
