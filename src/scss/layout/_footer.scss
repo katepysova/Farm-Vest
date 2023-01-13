@@ -151,11 +151,14 @@ $bp-footer: 1900px;
   }
 
   &__copyright {
-    order: 1;
     font-size: rem(12px);
     font-weight: 300;
     line-height: rem(13px);
     letter-spacing: 0;
+
+    @media only screen and (max-width: $bp-medium) {
+      order: 1;
+    }
   }
 
   &__list {
