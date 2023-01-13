@@ -1,0 +1,117 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+.feedback {
+  &__container {
+    padding-top: rem(100px);
+    padding-bottom: rem(100px);
+
+    @media only screen and (max-width: $bp-small) {
+      padding-top: rem(48px);
+      padding-bottom: rem(48px);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(32px);
+  }
+
+  &__text {
+    margin: 0 auto rem(48px);
+    width: m-percentage(563px, 1420px);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(48px);
+    margin-bottom: rem(48px);
+
+    @media only screen and (max-width: $bp-medium) {
+      column-gap: rem(36px);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr;
+      row-gap: rem(36px);
+    }
+  }
+
+  &__card {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 0.441fr 0.559fr;
+    border-radius: rem(20px);
+    background-color: rgba($color-white, 0.1);
+
+    &-content {
+      padding: rem(32px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: rem(16px);
+
+      @media only screen and (max-width: $bp-medium) {
+        flex-grow: 1;
+      }
+    }
+
+    &-text {
+      @include line-clip(5, $is-flex-item: true);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__user-photo {
+    position: relative;
+    padding-bottom: 125%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      padding-bottom: 75%;
+    }
+  }
+
+  &__user-name {
+    font-size: rem(18px);
+    font-weight: 600;
+    line-height: rem(32px);
+    letter-spacing: 0;
+  }
+
+  &__btn {
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+    }
+  }
+}
+
+.light-mode {
+  .feedback__card {
+    background-color: rgba($color-green-day, 0.1);
+  }
+}
