@@ -156,7 +156,9 @@ const svgSprite = () => {
 };
 
 const createGHPages = () => {
-  return gulp.src(path.buildFolder, { allowEmpty: true }).pipe(gulpPages());
+  return gulp
+    .src(`${path.buildFolder}/**/*`, { allowEmpty: true })
+    .pipe(gulpPages());
 };
 
 const reset = () => deleteAsync(path.clear);
