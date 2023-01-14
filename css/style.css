@@ -176,7 +176,7 @@ ul {
   height: 100%;
   border-radius: 50%;
   display: inline-block;
-  background-image: url("/images/night.svg");
+  background-image: url("./images/night.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
