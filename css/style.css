@@ -176,7 +176,7 @@ ul {
   height: 100%;
   border-radius: 50%;
   display: inline-block;
-  background-image: url("./images/night.svg");
+  background-image: url("../images/night.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -190,7 +190,7 @@ ul {
   transform: translateY(-50%) translateX(-80%);
 }
 .theme-switcher__input:checked + .theme-switcher__toggler::before {
-  background-image: url("/images/sunny.svg");
+  background-image: url("../images/sunny.svg");
 }
 
 .btn, .btn:link, .btn:visited {
