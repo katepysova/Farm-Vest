@@ -7,7 +7,7 @@ Farm Vest landing page layout.
 
 1. Clone this repo or downloand zip:
 
-   `git@github.com:katepysova/Farm-Vest.git`
+   `git@github.com:katepysova/Relvise.git`
 
 2. Change your current directory to this project directory.
 
