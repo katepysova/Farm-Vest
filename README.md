@@ -1,13 +1,13 @@
-#
+# FarmVest
 
-Relvise landing page layout.  
-[Demo](https://katepysova.github.io/Relvise/).
+FarmVest landing page layout.  
+[Demo](https://katepysova.github.io/Farm-Vest/).
 
 ## Installation
 
 1. Clone this repo or downloand zip:
 
-   `git@github.com:katepysova/Relvise.git`
+   `git@github.com:katepysova/Farm-Vest.git`
 
 2. Change your current directory to this project directory.
 
