@@ -1,7 +1,7 @@
-# Farm Vest
+#
 
-Farm Vest landing page layout.  
-[Demo](https://katepysova.github.io/Farm-Vest/).
+Relvise landing page layout.  
+[Demo](https://katepysova.github.io/Relvise/).
 
 ## Installation
 
